@@ -1,0 +1,361 @@
+\documentclass[a4,12pt]{amsart}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\oddsidemargin 0mm
+\evensidemargin 0mm
+\topmargin 0mm
+\textwidth 160mm
+\textheight 230mm
+\tolerance=9999
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb,amstext,amsmath,amscd,amsthm,amsfonts,enumerate,graphicx,latexsym, hyperref,cleveref,bm} 
+\usepackage[T1]{fontenc}
+%\usepackage[czech]{babel}
+%\babelprovide[import,main]{czech}
+\usepackage[usenames]{color}
+%\usepackage{showkeys}
+\usepackage[all]{xy}
+\newcommand{\cmt}[1]{{\color{red} #1}}
+\newcommand{\new}[1]{{\color{blue} #1}}
+ \usepackage{comment}
+ \usepackage{mathrsfs}
+ \usepackage{tikz-cd}
+\usepackage{relsize}
+\usepackage{mathtools}
+
+
+\numberwithin{equation}{section}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem{lem}[equation]{Lemma}
+\newtheorem{theorem}[equation]{Theorem}
+\newtheorem*{gr}{Green's Linear Syzygy Theorem}
+\newtheorem{propo}[equation]{Proposition}
+\newtheorem{prop}[equation]{Proposition}
+\newtheorem{cor}[equation]{Corollary}
+\newtheorem{conj}[equation]{Conjecture}
+\newtheorem{claim}[equation]{Claim}
+\newtheorem{claim*}{Claim}
+\newtheorem{thm}[equation]{Theorem}
+\newtheorem{convention}[equation]{Convention}
+\newtheorem{question}[equation]{Question}
+
+
+\theoremstyle{definition}
+\newtheorem{defn}[equation]{Definition}
+\newtheorem{dfn}[equation]{Definition}
+\newtheorem{notation}[equation]{Notation}
+\newtheorem{example}[equation]{Example}
+\newtheorem{ex}[equation]{Example}
+\newtheorem{construction}[equation]{Construction}
+\newtheorem{constr}[equation]{Construction}
+\newtheorem{algorithm}[equation]{Algorithm}
+\newtheorem{warning}[equation]{Warning}
+\newtheorem{conventions}[equation]{Conventions}
+\newtheorem{setup}[equation]{Setup}
+\newtheorem{nota}[equation]{Notation}
+\newtheorem{conv}[equation]{Convention}
+
+
+\theoremstyle{remark}
+\newtheorem{remark}[equation]{Remark}
+\newtheorem{remarks}[equation]{Remarks}
+\newtheorem{rem}[equation]{Remark}
+
+\newtheorem*{ac}{Acknowlegments}
+
+\newcommand{\projdim}{\operatorname{proj\,dim}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\numberwithin{equation}{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\ann{\operatorname{ann}}
+\def\ass{\operatorname{Ass}}
+\def\assh{\operatorname{Assh}}
+\def\cm{\operatorname{CM}}
+\def\codim{\operatorname{codim}}
+\def\cok{\operatorname{Coker}}
+\def\depth{\operatorname{depth}}
+\def\E{\operatorname{E}}
+\def\End{\operatorname{End}}
+\def\Ext{\operatorname{Ext}}
+\def\height{\operatorname{ht}}
+\def\h{\operatorname{H}}
+\def\Hom{\operatorname{Hom}}
+\def\I{\operatorname{I}}
+\def\id{\mathrm{id}}
+\def\im{\operatorname{im}}
+\def\jac{\operatorname{Jac}}
+\def\ker{\operatorname{ker}}
+\def\lend{\operatorname{\underline{End}}}
+\def\lhom{\operatorname{\underline{Hom}}}
+\def\lmod{\operatorname{\underline{mod}}}
+\def\m{\mathfrak{m}}
+\def\Min{\operatorname{Min}}
+\def\mod{\operatorname{mod}}
+\def\Mod{\operatorname{Mod}}
+\def\n{\mathfrak{n}}
+\def\ng{\operatorname{NG}}
+\def\p{\mathfrak{p}}
+\def\res{\operatorname{res}}
+\def\soc{\operatorname{soc}}
+\def\spec{\operatorname{Spec}}
+\def\sing{\operatorname{Sing}}
+\def\syz{\Omega}
+\def\t{\mathrm{t}}
+\def\Tor{\operatorname{Tor}}
+\def\Tr{\operatorname{Tr}}
+\def\tr{\operatorname{tr}}
+\def\uend{\operatorname{\overline{End}}}
+\def\uhom{\operatorname{\overline{Hom}}}
+\def\V{\operatorname{V}}
+\def\type{\operatorname{type}}
+\def\cmf{\operatorname{CM_{full}}}
+\def\supp{\operatorname{Supp}}
+\def\chr{\operatorname{char}}
+\def\G{\operatorname{\textbf{G}}}
+\def\sh{\operatorname{Sh}}
+\def\U{\operatorname{\textbf{U}}}
+\def\T{\operatorname{\textbf{T}}}
+\def\A{\operatorname{\textbf{A}}}
+\def\K{\operatorname{\textbf{K}}}
+\def\bar{\operatorname{\textbf{Bar}}}
+\def\syz{\operatorname{Syz}}
+\def\Syz{\operatorname{Syz}}
+\def\det{\operatorname{\textbf{Det}}}
+\def\sing{\operatorname{\mathrm{Sing}}}
+\def\rk{\operatorname{rank}}
+\def\a{\operatorname{\textbf{a}}}
+\def\u{\operatorname{\textbf{u}}}
+\def\ca{\operatorname{\mathrm{ca}}}
+\def\cone{\operatorname{\mathrm{\textbf{Cone}}}}
+\def\I{\operatorname{\mathbf{I}}}
+\def\itot{\operatorname{\mathbf{I}^{tot}}}
+\def\istab{\operatorname{\mathbf{I}^{stab}}}
+\def\d{\operatorname{\boldsymbol{\delta}}}
+\def\M{\operatorname{\boldsymbol{M}}}
+\def\C{\operatorname{\mathrm{C}}}
+\def\grade{\operatorname{\mathrm{Grade}}}
+\def\F{F}
+\def\ord{\operatorname{ord}}
+\def\hilb{\operatorname{\boldsymbol{H}}}
+\def\cond{\mathfrak{c}}
+\def\cx{\operatorname{\boldsymbol{cx}}}
+\newcommand{\ses}[3]{0 \to {#1} \to {#2} \to {#3} \to 0}
+\newcommand{\ds}{\displaystyle}
+%macros added by MB
+\def\nc{\newcommand}
+\def\on{\operatorname}
+\def\th{\on{th}}
+\nc{\from}{\leftarrow}
+\nc{\xra}{\xrightarrow}
+\nc{\xla}{\xleftarrow}
+\def\:{\colon}
+\nc{\tQ}{\widetilde{Q}}
+\nc{\tf}{\widetilde{f}}
+\nc{\Db}{\on{D}^{\on{b}}}
+\nc{\tD}{\widetilde{D}}
+\nc{\coker}{\on{coker}}
+\def\Z{\mathbb{Z}}
+\nc{\odd}{\on{odd}}
+\nc{\even}{\on{even}}
+\nc{\tS}{\widetilde{S}}
+\nc{\mf}{\on{mf}}
+\nc{\hmf}{\on{hmf}}
+\nc{\op}{\on{op}}
+\nc{\pd}{\on{pd}}
+\nc{\Perf}{\on{Perf}}
+\nc{\st}{\on{st}}
+\def\MR#1{}
+\nc{\into}{\hookrightarrow}
+\nc{\onto}{\twoheadrightarrow}
+\def\top{\on{top}}
+\nc{\Jac}{\on{Jac}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%\allowdisplaybreaks
+\setlength{\baselineskip}{14pt}
+\title{Notes on infinite free resolutions}
+\author{Michael K. Brown}
+
+
+\author{Hailong Dao}
+
+\author{David Eisenbud}
+\author{Prashanth Sridhar}
+
+
+\newcommand{\Addresses}{{
+	\vskip\baselineskip
+  	\footnotesize
+  	\noindent \textsc{Department of Mathematics and Statistics, Auburn University} \par\nopagebreak
+	\noindent \textit{E-mail addresses:} \texttt{mkb0096@auburn.edu, prashanth.sridhar0218@gmail.com}
+  	\vskip\baselineskip
+   \noindent \textsc{Department of Mathematics, University of California, Berkeley} \par\nopagebreak
+	\noindent \textit{E-mail address:} \texttt{de@berkeley.edu}
+  	\vskip\baselineskip
+  	\noindent \textsc{Department of Mathematics, University of Kansas} \par\nopagebreak
+	\noindent \textit{E-mail address:} \texttt{hdao@ku.edu}
+}}
+
+
+%\begin{abstract}
+%\end{abstract}
+\keywords{} 
+\subjclass[2010]{}
+\maketitle
+%\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ideas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}
+
+
+\item We know periodicity of ideals of minors does not hold over Koszul algebras (Gasharov-Peeva give a counterexample). But can we compute the stable ideals of $1 \times 1$-minors? It seems that, generically, we get the maximal ideal. 
+\item A question related to (2): can we show that the linear part of any minimal free resolution of a module over a Koszul algebra is eventually exact, as is the case over an exterior algebra (see \cite[Theorem 3.1]{EFS})?
+
+\item Can we prove/disprove periodicity of ideals of minors for 1-dimensional Gorenstein algebras? What (more) can we say about the stable ideals of minors in this case?
+
+\item Eisenbud-Reeves-Totaro have conjectured that, given a finitely generated module $M$ over a standard graded polynomial ring, there exists a choice of basis of the minimal free resolution $F$ of $M$ and some $N \ge 0$ such that the entries of the matrices in $F$ have degree at most $N$. It seems we can prove this over complete intersections and Golod rings. Is this worth writing up? What is the next natural family of examples to consider?
+
+\item Can we compute stable ideals of minors over hypersurface rings?
+
+\item Socle summands: In all examples seen so far (June 30,2023) the semigroup of positions in which socle summands occur
+in the syzygies of the residue field of an artin local ring
+consists of all integers starting with a some number $d$, ie $d+NN$ OR $(n+1, n+3+NN$ where n is the embedding dimension. This is true for Burch rings ($d=2$ and for
+Golod ring (where both patters occur).
+
+\item Moving beyond socle summands: when do syzygy modules of indecomposable modules (eg of the residue field) decompose as direct sums, either over the ground field or over the algebraic closure? eg: never for 0-dimensional Gorenstein rings. This can be investigated via the endomorphism rings of syzygies. (Sayrafi has begun some coding to detect idempotents).
+\end{enumerate}
+
+We also have:
+
+\begin{question}[Dao-Eisenbud]\label{DE_conjecture}
+    Given a finitely generated module $M$ over a local ring $R$, must there be a number $n(M)$ such that the sum of the ideals of $1\times 1$ minors in $n(M)$ consecutive differential matrices of the minimal resolution of $M$ eventually becomes constant? Is there an integer only depending on $R$ that bounds all $n(M)$ from above?
+
+
+\end{question}
+
+In fact we know no example of a ring and a module $M$ where we cannot take $n(M) = 2$. [Doesn't the material in \cite{DMS} prove that
+n=2 works for complete intersections and Golod rings?]
+
+ \section{Stability of ideal of minors up to radical}
+
+ Throughout this section $R$ will be a (graded) local ring, $M$ a finite module over it and $\F\xra{\simeq} M$ it's minimal (graded) free resolution.
+
+\par 
+
+ \subsection*{Proposed strategy for approaching \Cref{DE_conjecture} up to radical in some cases:} 
+ The up to radical version of the Dao -Eisenbud conjecture states that if a prime ideal contains the sum of ideal of entries of $n(M)$ consecutive matrices, then it contains that of the differentials prior and after. Suppose these $n(M)$ matrices are the beginning of the minimal free resolution of $N$. Then if $P$ contains the sum of ideal of entries of $n(M)$ consecutive matrices, then the first $n(M)-1$ matrices localized at P can be completed to a minimal free resolution of $N_P$. If the ring $R$ and $R_P$ are such that for any module, one can determine all Betti numbers, given finitely many of them (ex: rational Poincare series), then one can try to bound $n(M)$ using this.
+ 
+If $R$ is Gorenstein one can dualize the complex if $N$ is MCM and use this approach to address the matrix that appears prior.
+
+In the opposite direction, there are some rings where the Betti numbers
+of every module are strictly increasing. If this is true for
+a localization $R_P$, then $P$ must contain minors of a certain size.
+
+\subsection*{Other miscellaneous notes:}
+
+\begin{rem}
+    I find the convention that $I_1(0) = 1$ a little strange, though it does agree with the idea the the top fitting ideal is 1 iff the cokernel is projective\dots 
+\end{rem}
+\begin{rem}\label{rem: reg_sequence_ideal_of entries}
+    Suppose $R$ is Cohen-Macaulay of dimension $d$. Then $\I^1_i(M)\not\subseteq (\underline{x})$ for any regular sequence $\underline{x}$ in $R$ and for all $i\geq d+1$. This is clear if $M$ has finite projective dimension, so assume $M$ has infinite projective dimension. Since $\syz_d(M)$ is maximal Cohen-Macaulay, any regular sequence $\underline{x}$ of $R$ is also regular on $\syz_d(M)$. Thus, $\F_{\geq d}\otimes_R R/(\underline{x}R)$ is a minimal acyclic complex and hence none of it's differentials can be the zero map.
+
+    Here the ``regular sequence'' could be replaced with the annihilator of any module of finite projective dimension, trading concreteness for generality (I usually prefer concreteness!)
+\end{rem}
+
+\begin{question}
+    Are there constraints similar to those in \Cref{rem: reg_sequence_ideal_of entries} for higher rank minors?
+\end{question}
+
+ \begin{lem}\label{lem: no_free_summands}
+     Let $M$ be non-free such that $\depth(M)\geq \depth(R)$. Then $\syz_1(M)$ has no free summands.
+ \end{lem}
+ \begin{proof}
+     Note that $\projdim(M)=\infty$. Consider the exact sequence $\G$
+     
+$$
+  0 \xla{}  M \xla{} F_0 \xla{} \syz_1(M) \xla{} 0
+ $$
+
+
+ Note that $\syz_1(M)$ has depth at least $\depth(R)$. By prime avoidance, we can choose a maximal regular sequence $\underline{x}$ in $R$ that is also regular on the flanking modules. Thus, $\G\otimes_R R/(\underline{x})R$ is exact. Moreover, $\F\otimes_R R/(\underline{x})R$ is acyclic. Note that $\projdim_{R/(\underline{x})R}M/(\underline{x})M = \projdim_R(M)=\infty$. We have $\syz_1(M)\otimes_R R/(\underline{x})R\simeq \syz_1^{R/(\underline{x})R}(M\otimes_R R/(\underline{x})R)$. Since the latter is annihilated by the socle (which is non-zero) of $R/(\underline{x})R$, it cannot have a free summand over $R/(\underline{x})R$ and hence $\syz_1(M)$ cannot have a free summand over $R$.
+ 
+ %is free over $R/(\underline{x})$ if and only if it is free over $R/(\underline{x})$ of rank equal to $\rk_R(\F_0)$ if and only if $\syz_1(M)/(\underline{x})\syz_1(M)=0$. The last assertion is impossible by Nakayama and hence $\projdim_{R/(\underline{x})R}M/(\underline{x})M=\infty$. 
+
+ \end{proof}
+
+ \begin{cor}
+     Assume $\projdim_R(M)=\infty$. For all $n\geq \depth(R)+1$, $\syz_n(M)$ does not have a free summand.
+ \end{cor}
+ \begin{proof}
+     This is immediate from \Cref{lem: no_free_summands}.
+ \end{proof}
+
+ \begin{rem}\label{rem: BH}
+     Suppose we have a map of finite free $R$-modules $\phi:F\rightarrow G$. Then, for $P\in Spec(R)$, $\I^1(\phi)\not\subseteq P$ implies $\im(\phi_P)$ contains a free summand of $G_P$ (see for example \cite[Lemma 1.4.8]{bruns_herzog}). After a change of basis of $G_P$, one sees that this in turn implies that $\im(\phi_P)$ has a free summand.
+ \end{rem}
+
+
+
+ %\subsection{Note on $1$-periodicity}
+
+%Here we note that in general we cannot expect anything less than $2$-periodicity of ideal of minors in the setting of \Cref{CI_periodicity}.  Starting with codimension one, this is clearly too much to expect : the matrix factorization $(x,x^2)$ of $x^3$ in $k[x]$ gives a counterexample. What if we restrict attention to \textit{irreducible} hypersurfaces ? Let us fix some notation. Let $S$ be a regular local ring, $f\in S$ irreducible and set $R\coloneqq S/(f)$. Let $(d,h)$ be a minimal matrix factorization for $f$ of equal rank:
+
+%\begin{tikzpicture}  
+ %[every node/.style={scale=1},  auto]
+%\node(20){$S^a$};
+%\node(21)[node distance=2.5cm, right of=20]{$S^a$};
+%\node(22)[node distance=2.5cm, right of=21]{$S^a$};
+%\node(23)[node distance=2.5cm, right of=22]{$S^a$};
+%\node(30)[node distance=2.5cm, below of=20]{$A_{1}(p)/A_{1}(p-1)$};
+%\node(32)[node distance=2.5cm, below of=22]{$A_{1}(p)/A_{1}(p-1)$};
+%\draw[->] (20) to node[swap] {$\pi_p$} (30);
+%\draw[->] (22) to node {$\pi_p$} (32);
+%\draw[->] (20) to node [above=1pt] {$d$} (21);
+%\draw[->] (21) to node [above=1pt]{$h$} (22);
+%\draw[->] (22) to node [above=1pt] {$d$} (23);
+%\draw[->, bend right=40, ] (21)  to node[above=0pt]  {$f$} (23);
+%\draw[->, bend left=40, ] (20)  to node[above=0pt]  {$f$} (22);
+%\draw[->, bend left=40, ] (30)  to node[above=0pt] {$f_{p}$} (32);
+%\end{tikzpicture}
+%\end{center}
+%Since $f$ is irreducible, $\det(d)=f^m$ and $\det(h)=f^n$ for some non negative integers $m,n$ such that $m+n=a$.
+%Let $d_f$ and $h_f$ denote the natural images of $d$ and $h$ respectively upon inverting $f$. We have $d_f(\dfrac{1}{f}h_f)=\id_{S_f^a}$. If $A$ is an invertible matrix with entries in a commutative ring, the ``Jacobi identity" or ``Schur complement formula" says that if $I$ and $J$ are collections of rows and columns of $A$ of the same cardinality, then
+%\[\det(A[I,J])=\det(A)\det(A^{-1}[J^c,I^c])\]
+%Here $A[I,J]$ denotes the submatrix of $A$ obtained by only retaining the rows from $I$ and the columns from $J$, while $I^c$ (resp. $J^c$) denotes the collection of rows (resp. columns) of $A$ that do not lie in $I$ (resp. $J$). From this relation, we see that $\I^r(d\otimes R)=0$ for $r>n$ and $\I^r(h\otimes R)=0$ for $r>m$. Moreover, $\I^n(d\otimes R)=\I^m(h\otimes R)$. Without loss of generality, assume that $m\leq n$. Suppose that $1$-periodicity of ideal of minors of all sizes holds for the minimal free resolution of $\cok(d\otimes R)$.  We have in particular that $\I^n(h\otimes R)=\I^n(d\otimes R)=\I^m(h\otimes R)$. If $m>n$, then by Nakayama's lemma, $\I^m(h\otimes R)=0$, so that $\rk(h\otimes R)<m$. This gives
+%\[a=\rk(h\otimes R)+\rk(d\otimes R)<m+n=a\] A contradiction. Therefore $m=n$ is necessary for 1-periodicity - in other words, $\rk(d\otimes R)=\rk(h\otimes R)$ is necessary for $1$-periodicity. In particular, matrix factorizations of odd sizes of irreducible hypersurfaces cannot possess $1$-periodicity. One may wonder if the converse is true: that is, does every matrix factorization of equal rank over an irreducible hypersurface possess $1$-periodicity of ideal of minors of all sizes? This is not true, as the following example from \cite{yoshino_1990} illustrates.
+%\par Take $S=k[x,y]$ for $k$ a field and $f=x^3+y^5$. Take
+
+%$$
+%d = \begin{pmatrix}
+%x & y^2 & 0 & y  \\
+%y^3 & -x^2 & -xy^2 & 0 \\
+%0 & 0 & x^2 & y^2  \\
+%0 & 0 & y^3 & -x 
+%\end{pmatrix},
+%\quad 
+%h = \begin{pmatrix}
+%x^2 & y^2 & 0 & xy \\
+%y^3 & -x & -y^2 & 0 \\
+%0 & 0 & x & y^2 \\
+%0 & 0 & y^3 & -x^2
+%\end{pmatrix},
+%$$
+%Then $\det(d)=\det(h)=f^2$, but $\I^1(d\otimes R)=(x,y)R$ and $\I^1(h\otimes R)=(x,y^2)R$.
+
+
+
+\bibliography{references}
+\bibliographystyle{amsalpha}
+\Addresses
+
+\end{document}
+
+
+
+
