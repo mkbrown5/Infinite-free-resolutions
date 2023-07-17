@@ -39,7 +39,8 @@ B = matrix{
 	{0,0,0,x-X,0,0,y-Y,0,z-Z,u-U}
 	}
 M = coker(A | B) --this is a T-module with transcendental Poincare series. 
---Thus, Linear Dominance does not hold for this module. 
+--Thus, Linear Dominance does not hold for this module, by results of
+--Herzog-Iyengar in their aforementioned paper.
 C = res(M, LengthLimit => 5)
 netList apply (length C, i -> trim ideal C.dd_i)--Good news: this computation
 --supports our conjecture. Though this example gives limited
@@ -48,7 +49,7 @@ netList apply (length C, i -> trim ideal C.dd_i)--Good news: this computation
 
 
 --Here is another (simpler) example, due to Roos, of a Koszul algebra
---and a module over it with pathological properties. This is Example 1.3 in the 
+--and a module over it with pathological properties. This is Example 1.3 in his 
 --aforementioned paper.
 restart
 S = ZZ/2[A',B', C']
