@@ -41,11 +41,12 @@ B = matrix{
 M = coker(A | B) --this is a T-module with transcendental Poincare series. 
 --Thus, Linear Dominance does not hold for this module, by results of
 --Herzog-Iyengar in their aforementioned paper.
-C = res(M, LengthLimit => 5)
+C = res(M, LengthLimit => 4)--this takes several seconds
 netList apply (length C, i -> trim ideal C.dd_i)--Good news: this computation
 --supports our conjecture. Though this example gives limited
---information, since the resolution C is not minimal in degrees 4 and 5 (and
---pruning it seems to take too long). 
+--information, since the resolution C is not minimal in degree 4 (and
+--pruning it seems to take too long). One also gets non-minimality in degree 5;
+--I omitted this computation as it takes awhile. 
 
 
 --Here is another (simpler) example, due to Roos, of a Koszul algebra
@@ -67,7 +68,7 @@ A = matrix{
 M = coker A--And here is a pathological module over it. I believe Linear Dominance
 --also does not hold for this module, though I need to find a clear citation.
 C = res M
-netList apply (7, i -> trim ideal C.dd_i)--One again, this computation
+netList apply (5, i -> trim ideal C.dd_i)--One again, this computation
 --supports our conjecture, although we still have the problem
 --of non-minimality.
 
