@@ -65,8 +65,7 @@ A = matrix{
 	{0, C' + C'' + B', A'', A', B' + B''}
 	}
 M = coker A--And here is a pathological module over it. I believe Linear Dominance
---also does not hold for this module, though I had trouble finding a clear 
---citation for this.
+--also does not hold for this module.
 C = res M
 netList apply (7, i -> trim ideal C.dd_i)--One again, this computation
 --supports our conjecture, although we still have the problem
