@@ -13,7 +13,8 @@ netList apply (length C, i -> trim ideal C.dd_i)
 --and their Hochschild homology". See pages 302 - 303 of that paper.
 --It's an example of a module over a Koszul algebra 
 --with transcendental Poincare series. It follows that "Linear Dominance" does not
---hold for this module. 
+--hold for this module, by a result of Herzog-Iyengar on linear defects; see the
+--discussion on page 155 of Herzog-Iyengar's "Koszul modules".
 restart
 S = ZZ/2[x, y, z, u, v]--working mod 2 helps keeps computing time down. 
 I = (ideal vars S)^2
@@ -41,7 +42,7 @@ M = coker(A | B) --this is a T-module with transcendental Poincare series.
 --Thus, Linear Dominance does not hold for this module. 
 C = res(M, LengthLimit => 5)
 netList apply (length C, i -> trim ideal C.dd_i)--Good news: this computation
---doesn't violate our conjecture. Though this example gives limited
+--supports our conjecture. Though this example gives limited
 --information, since the resolution C is not minimal in degrees 4 and 5 (and
 --pruning it seems to take too long). 
 
@@ -62,8 +63,11 @@ A = matrix{
 	{B' + B'', C'' , 0, A', C'+C''},
 	{0, C' + C'' + B', A'', A', B' + B''}
 	}
-M = coker A--And here is a pathological module over it
+M = coker A--And here is a pathological module over it. I believe Linear Dominance
+--also does not hold for this module, though I had trouble finding a clear 
+--citation for this.
 C = res M
-netList apply (7, i -> trim ideal C.dd_i)--One again, this example does not
---obviously violate our conjecture, although we still have the problem
+netList apply (7, i -> trim ideal C.dd_i)--One again, this computation
+--supports our conjecture, although we still have the problem
 --of non-minimality.
+
